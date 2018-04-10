@@ -13,10 +13,14 @@
                  [org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.238"]
                  [org.postgresql/postgresql "42.2.2"]
-                 [ring/ring-core "1.6.3"]]
+                 [re-frame "0.10.5"]
+                 [reagent "0.7.0"]
+                 [ring/ring-core "1.6.3"]
+                 [venantius/accountant "0.2.4"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot phoneq.main
   :uberjar-name  "phoneq-standalone.jar"
+  :source-paths ["src/clj"]
   :resource-paths ["resources" "target/resources"]
   :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
   :profiles

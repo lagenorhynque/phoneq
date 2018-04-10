@@ -1,6 +1,9 @@
 {:duct.core/environment :development
  :duct.core/include ["phoneq/config"]
 
+ :duct.module/cljs
+ {:source-paths ["dev/src" "src/cljs"]}
+
  ;; :duct.module/sql
  ;; {:database-url "jdbc:postgresql://localhost:5432/xxx"}
  }

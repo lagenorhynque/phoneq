@@ -7,7 +7,9 @@
  ;; :duct.module/sql
  ;; {:database-url "jdbc:postgresql://localhost:5432/xxx"}
 
- :duct.module/cljs {:main phoneq.client}
+ :duct.module/cljs
+ {:main phoneq.client.core
+  :source-paths ["src/cljs"]}
 
  :duct.module/ataraxy
  {"/" [:home/index]}
