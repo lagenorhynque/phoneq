@@ -3,11 +3,17 @@
 
  :duct.module/logging {}
  :duct.module.web/site {}
- :duct.module/sql {}
- :duct.module/cljs {:main phoneq.client}
- 
- :duct.router/cascading
- [#ig/ref :phoneq.handler/example]
+ ;; :duct.module.web/api {}
+ ;; :duct.module/sql
+ ;; {:database-url "jdbc:postgresql://localhost:5432/xxx"}
 
- :phoneq.handler/example
- {:db #ig/ref :duct.database/sql}}
+ :duct.module/cljs {:main phoneq.client}
+
+ :duct.module/ataraxy
+ {"/" [:home/index]}
+ ;; :duct.router/ataraxy
+ ;; {:routes {"/" [:home/index]}
+ ;;  :handlers {:home/index #ig/ref :phoneq.handler.home/index}}
+
+ :phoneq.handler.home/index {}
+ }

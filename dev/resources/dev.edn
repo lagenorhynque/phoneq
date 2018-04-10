@@ -1,5 +1,6 @@
 {:duct.core/environment :development
  :duct.core/include ["phoneq/config"]
 
- :duct.module/sql
- {:database-url "jdbc:postgresql://localhost/postgres"}}
+ ;; :duct.module/sql
+ ;; {:database-url "jdbc:postgresql://localhost:5432/xxx"}
+ }
