@@ -1,0 +1,13 @@
+{:duct.core/project-ns  phoneq
+ :duct.core/environment :production
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+ :duct.module/sql {}
+ :duct.module/cljs {:main phoneq.client}
+ 
+ :duct.router/cascading
+ [#ig/ref :phoneq.handler/example]
+
+ :phoneq.handler/example
+ {:db #ig/ref :duct.database/sql}}
