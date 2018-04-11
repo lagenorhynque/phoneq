@@ -4,6 +4,9 @@
   :min-lein-version "2.0.0"
   :jvm-opts ["--add-modules" "java.xml.bind"]
   :dependencies [[bidi "2.1.3"]
+                 [cljs-react-material-ui "0.2.50"]
+                 [cljsjs/react "16.3.0-1"]
+                 [cljsjs/react-dom "16.3.0-1"]
                  [duct/core "0.6.2"]
                  [duct/module.ataraxy "0.2.0"]
                  [duct/module.cljs "0.3.2"]
@@ -16,6 +19,7 @@
                  [re-frame "0.10.5"]
                  [reagent "0.7.0"]
                  [ring/ring-core "1.6.3"]
+                 [stylefy "1.4.0"]
                  [venantius/accountant "0.2.4"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot phoneq.main

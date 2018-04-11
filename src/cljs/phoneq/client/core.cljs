@@ -1,9 +1,11 @@
 (ns phoneq.client.core
-  (:require [phoneq.client.events :as events]
+  (:require [cljsjs.material-ui]
+            [phoneq.client.events :as events]
             [phoneq.client.views :as views]
             [phoneq.client.config :as config]
             [re-frame.core :as re-frame]
-            [reagent.core :as reagent]))
+            [reagent.core :as reagent]
+            [stylefy.core :as stylefy]))
 
 (defn dev-setup []
   (when config/debug?
@@ -18,4 +20,5 @@
 (defn ^:export init []
   (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
+  (stylefy/init)
   (mount-root))
