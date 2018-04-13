@@ -1,8 +1,11 @@
 (ns phoneq.client.core
-  (:require [cljsjs.material-ui]
-            [phoneq.client.events :as events]
-            [phoneq.client.views :as views]
+  (:require [accountant.core :as accountant]
+            [bidi.bidi :as bidi]
+            [cljsjs.material-ui]
             [phoneq.client.config :as config]
+            [phoneq.client.events :as events]
+            [phoneq.client.routes :refer [routes]]
+            [phoneq.client.views :as views]
             [re-frame.core :as re-frame]
             [reagent.core :as reagent]
             [stylefy.core :as stylefy]))
@@ -19,6 +22,13 @@
 
 (defn ^:export init []
   (re-frame/dispatch-sync [::events/initialize-db])
-  (dev-setup)
+  (accountant/configure-navigation!
+   {:nav-handler (fn [path]
+                   (re-frame/dispatch [::events/navigate
+                                       (bidi/match-route routes path)]))
+    :path-exists? (fn [path]
+                    (boolean (bidi/match-route routes path)))})
+  (accountant/dispatch-current!)
   (stylefy/init)
+  (dev-setup)
   (mount-root))

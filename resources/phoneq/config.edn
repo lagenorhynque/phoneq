@@ -12,10 +12,16 @@
   :source-paths ["src/cljs"]}
 
  :duct.module/ataraxy
- {"/" [:home/index]}
+ {"/" [:home/index]
+  "/speaking" [:home/speaking]
+  "/dictation" [:home/dictation]
+  "/settings" [:home/settings]}
  ;; :duct.router/ataraxy
  ;; {:routes {"/" [:home/index]}
  ;;  :handlers {:home/index #ig/ref :phoneq.handler.home/index}}
 
  :phoneq.handler.home/index {}
+ :phoneq.handler.home/speaking {}
+ :phoneq.handler.home/dictation {}
+ :phoneq.handler.home/settings {}
  }

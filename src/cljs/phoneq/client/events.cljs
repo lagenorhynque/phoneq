@@ -6,3 +6,8 @@
   ::initialize-db
   (fn  [_ _]
     db/default-db))
+
+(re-frame/reg-event-db
+  ::navigate
+  (fn [db [_ {:keys [handler]}]]
+    (assoc db :view handler)))
