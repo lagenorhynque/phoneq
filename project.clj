@@ -2,7 +2,8 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
-  :jvm-opts ["--add-modules" "java.xml.bind"]
+  ;; for Java 9
+  ;; :jvm-opts ["--add-modules" "java.xml.bind"]
   :dependencies [[bidi "2.1.3"]
                  [cljs-react-material-ui "0.2.50"]
                  [cljsjs/react "16.3.0-1"]
