@@ -24,7 +24,7 @@
   (re-frame/dispatch-sync [::events/initialize-db])
   (accountant/configure-navigation!
    {:nav-handler (fn [path]
-                   (re-frame/dispatch [::events/navigate
+                   (re-frame/dispatch [::events/set-current-view
                                        (bidi/match-route routes path)]))
     :path-exists? (fn [path]
                     (boolean (bidi/match-route routes path)))})
